@@ -104,8 +104,6 @@ Order by 1, 2
 
 
 
-
-
 -- Covid Vaccinations Table
 
 Select * 
@@ -116,8 +114,6 @@ Select *
 From CovidDatabase..covidDeaths_data$ AS dea
 JOIN CovidDatabase..covidVacination_data$ AS vac
 ON dea.location = vac.location AND dea.date = vac.date
-
-
 
 
 
@@ -149,7 +145,6 @@ SELECT *, (RollingPeopleVaccinated/Population)*100 AS PercentageOfRollingPopulat
 FROM PopVsVac
 
 
-
 --- Using Temp Table to do the above query
 DROP Table if exists #PercentagePopulationVaccinated
 CREATE Table #PercentagePopulationVaccinated
@@ -175,8 +170,6 @@ SELECT *, (RollingPeopleVaccinated/Population)*100 AS PercentageOfRollingPopulat
 FROM #PercentagePopulationVaccinated
 
 
-
-
 -- Creating View for storing data for visualization 
 
 CREATE VIEW PercentPopulationVaccinated_view AS 
@@ -189,5 +182,7 @@ WHERE dea.continent IS NOT NULL
 --ORDER BY 2, 3
 
 
-SELECT *
-FROM PercentPopulationVaccinated_view
+-- SELECT *
+-- FROM PercentPopulationVaccinated_view
+
+
